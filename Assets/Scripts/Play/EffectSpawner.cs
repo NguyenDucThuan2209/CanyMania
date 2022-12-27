@@ -119,7 +119,6 @@ public class EffectSpawner : MonoBehaviour
 
     IEnumerator IEEnergyInc()
     {
-        // Debug.Log (Energy.gameObject.transform.position);
         isEnergyInc = true;
         float d = 1 / 210f;
         while (EnergyStack > 0)
@@ -136,7 +135,7 @@ public class EffectSpawner : MonoBehaviour
 
     private void ScoreEff(int score, Vector3 pos)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[4]);
+        GameObject tmp = Instantiate(EffectPrefabs[4]);
         tmp.transform.GetChild(0).GetComponent<TextMesh>().text = score.ToString();
         tmp.transform.SetParent(parent.transform, false);
         tmp.transform.position = new Vector3(pos.x, pos.y, tmp.transform.position.z);
@@ -159,27 +158,20 @@ public class EffectSpawner : MonoBehaviour
     }
     public GameObject JewelCash(Vector3 pos)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[0]);
+        GameObject tmp = Instantiate(EffectPrefabs[0]);
         tmp.transform.SetParent(JewelCrashParent.transform, false);
         tmp.transform.localPosition = new Vector3(pos.x, pos.y, -0.2f);
         return tmp;
-        // Destroy(tmp, JEWELCASH_TIME);
     }
 
     public void Thunder(Vector3 pos)
     {
-        // Debug.Break();
-        //GameObject tmp = (GameObject)Instantiate(EffectPrefabs[3]);
-        //tmp.transform.SetParent(parent.transform, false);
-        //tmp.transform.position = new Vector3 (pos.x,pos.y,-2.1f);
-        //Destroy(tmp, THUNDER_TIME);
-
         MGE(Energy.transform.position, pos, -0.4f);
     }
 
     public void boom(Vector3 pos)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[1]);
+        GameObject tmp = Instantiate(EffectPrefabs[1]);
         SoundController.Sound.Boom();
         tmp.transform.SetParent(parent.transform, false);
         tmp.transform.position = pos;
@@ -188,13 +180,13 @@ public class EffectSpawner : MonoBehaviour
 
     public void Enchant(GameObject obj)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[2]);
+        GameObject tmp = Instantiate(EffectPrefabs[2]);
         tmp.transform.SetParent(obj.transform, false);
     }
 
     public void ThunderRow(GameObject obj, int power)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[5]);
+        GameObject tmp = Instantiate(EffectPrefabs[5]);
         tmp.transform.SetParent(obj.transform.GetChild(0).transform, false);
         if (power == 3)
             tmp.transform.localEulerAngles = new Vector3(0, 0, 90);
@@ -202,7 +194,7 @@ public class EffectSpawner : MonoBehaviour
 
     public void FireArrow(Vector3 pos, bool c)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[6]);
+        GameObject tmp = Instantiate(EffectPrefabs[6]);
         tmp.transform.SetParent(parent.transform, false);
         tmp.transform.position = new Vector3(pos.x, pos.y, -2.2f);
         if (c)
@@ -212,25 +204,23 @@ public class EffectSpawner : MonoBehaviour
 
     public void Clock(GameObject obj)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[7]);
+        GameObject tmp = Instantiate(EffectPrefabs[7]);
         tmp.transform.SetParent(obj.transform.GetChild(0).transform, false);
     }
 
     public void StarWinEffect(Vector3 pos)
     {
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[8]);
-        tmp.transform.SetParent(parent.transform, false);
-        tmp.transform.position = new Vector3(pos.x, pos.y, tmp.transform.position.z);
-        Animation anim = tmp.GetComponent<Animation>();
-        StarEffectAnim(anim, tmp);
-        Destroy(tmp, 1f);
+        GameObject effect = Instantiate(EffectPrefabs[8]);
+        effect.transform.SetParent(parent.transform, false);
+        effect.transform.position = new Vector3(pos.x, pos.y, effect.transform.position.z);        
+        StarEffect(effect);
+        Destroy(effect, 1f);
 
     }
 
     public void IceCrash(Vector2 pos)
     {
-
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[9]);
+        GameObject tmp = Instantiate(EffectPrefabs[9]);
         tmp.transform.SetParent(parent.transform, false);
         tmp.transform.position = GribManager.cell.GribCell[(int)pos.x, (int)pos.y].transform.position;
         Destroy(tmp, ICECRASH_TIME);
@@ -238,39 +228,18 @@ public class EffectSpawner : MonoBehaviour
     }
     public void LockCrash(Vector2 pos)
     {
-
-        GameObject tmp = (GameObject)Instantiate(EffectPrefabs[10]);
+        GameObject tmp = Instantiate(EffectPrefabs[10]);
         tmp.transform.SetParent(parent.transform, false);
         tmp.transform.position = GribManager.cell.GribCell[(int)pos.x, (int)pos.y].transform.position;
         Destroy(tmp, ICECRASH_TIME);
 
     }
 
-    void StarEffectAnim(Animation anim, GameObject tmp)
+    void StarEffect(GameObject effect)
     {
-        //Debug.Break();
-        anim.enabled = true;
-        AnimationClip animclip = new AnimationClip();
-#if UNITY_5
-                animclip.legacy = true;
-#endif
-        AnimationCurve curveScalex = AnimationCurve.Linear(0, tmp.transform.localScale.x, 1, 3);
-        //AnimationCurve curveScaley = AnimationCurve.Linear(0, tmp.transform.localScale.y, 1, 3);
-        AnimationCurve curvex = AnimationCurve.Linear(0, tmp.transform.position.x, 1, 0);
-        AnimationCurve curvey = AnimationCurve.Linear(0, tmp.transform.position.y, 1, 0);
-        AnimationCurve curvez = AnimationCurve.Linear(0, tmp.transform.position.z, 1, tmp.transform.position.z);
-        AnimationCurve curveColora = AnimationCurve.Linear(0, 1, 1, 0);
-
-        animclip.SetCurve("", typeof(Transform), "m_LocalScale.x", curveScalex);
-        animclip.SetCurve("", typeof(Transform), "m_LocalScale.y", curveScalex);
-        animclip.SetCurve("", typeof(Transform), "localPosition.x", curvex);
-        animclip.SetCurve("", typeof(Transform), "localPosition.y", curvey);
-        animclip.SetCurve("", typeof(Transform), "localPosition.z", curvez);
-        animclip.SetCurve(tmp.transform.GetChild(0).name, typeof(SpriteRenderer), "m_Color.a", curveColora);
-        // animclip.SetCurve("", typeof(Animation), "m_Enabled", curvenable);
-        anim.wrapMode = WrapMode.Once;
-        anim.AddClip(animclip, "Startwin");
-        anim.Play("Startwin");
+        StartCoroutine(Ulti.IETransparentTo(effect.GetComponentInChildren<SpriteRenderer>().color, 1, 0, 1));
+        StartCoroutine(Ulti.IEScaleTo(effect.transform, effect.transform.localScale, 3 * effect.transform.localScale, 1));
+        StartCoroutine(Ulti.IEMoveTo(effect.transform, effect.transform.position, new Vector3(0, 0, effect.transform.position.z), 1));                        
     }
 
     public IEnumerator ComboTick()
@@ -335,8 +304,7 @@ public class EffectSpawner : MonoBehaviour
         if (PLayerInfo.MODE == 1)
         {
             redglass.SetTrigger("Active");
-        }//redglass.Play("glass");
-        //Debug.Log("bla");
+        }
     }
 
     public void MiniStar(Vector3 startpos, Jewel jewel)
@@ -352,7 +320,7 @@ public class EffectSpawner : MonoBehaviour
         }
         tmp.transform.SetParent(parent.transform, false);
         tmp.transform.localScale = new Vector3(0.3f,0.3f,0.3f);        
-        StartCoroutine(Ulti.MoveTo(tmp.transform, startpos, new Vector3(-2.485f, 4.418f, -2.2f), 1.2f));
+        StartCoroutine(Ulti.IEMoveTo(tmp.transform, startpos, new Vector3(-2.485f, 4.418f, -2.2f), 1.2f));
         Destroy(tmp, 1.2f);
     }
 }

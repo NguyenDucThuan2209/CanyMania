@@ -167,7 +167,7 @@ public class DataLoader : MonoBehaviour
     {
         DataLoader.enableclick = false;
         Vector3 newpos = listmap[CameraMovement.StarPointMoveIndex].transform.position + new Vector3(0, 0, -0.3f);
-        StartCoroutine(Ulti.MoveTo(CameraMovement.mcamera.transform, CameraMovement.mcamera.StarPoint.transform.position, newpos, STARMOVE_TIME));
+        StartCoroutine(Ulti.IEMoveTo(CameraMovement.mcamera.StarPoint.transform, CameraMovement.mcamera.StarPoint.transform.position, newpos, STARMOVE_TIME));
         StartCoroutine(stopanimation());
     }
     IEnumerator stopanimation()

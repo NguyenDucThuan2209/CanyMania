@@ -59,7 +59,7 @@ public class JewelObj : MonoBehaviour
     {
         RemoveFromList((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
         yield return new WaitForSeconds(DELAY - 0.015f);
-        StartCoroutine(Ulti.MoveTo(transform, transform.position, pos, DELAY));
+        StartCoroutine(Ulti.IEMoveTo(transform, transform.position, pos, DELAY));
 
         StartCoroutine(_Destroy());
     }

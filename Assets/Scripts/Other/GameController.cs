@@ -157,8 +157,8 @@ public class GameController : MonoBehaviour
 
         if (NeiObj1.Count >= 3 || NeiObj2.Count >= 3 || Jewel1.jewel.JewelType == 8 || Jewel2.jewel.JewelType == 8)
         {
-            StartCoroutine(Ulti.MoveTo(obj1.transform, obj1.transform.position, obj2.transform.position, 0.2f));
-            StartCoroutine(Ulti.MoveTo(obj2.transform, obj2.transform.position, obj1.transform.position, 0.2f));
+            StartCoroutine(Ulti.IEMoveTo(obj1.transform, obj1.transform.position, obj2.transform.position, 0.2f));
+            StartCoroutine(Ulti.IEMoveTo(obj2.transform, obj2.transform.position, obj1.transform.position, 0.2f));
             SwapJewelPosition(obj1, obj2);
             JewelProcess(NeiObj1, NeiObj2, obj1, obj2);
         }

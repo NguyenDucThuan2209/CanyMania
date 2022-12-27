@@ -53,18 +53,46 @@ public class Ulti : MonoBehaviour
         }
     }
 
-    public static IEnumerator MoveTo(Transform obj, Vector3 start, Vector3 end, float duration)
-    {        
+    public static IEnumerator IEMoveTo(Transform obj, Vector3 start, Vector3 end, float duration)
+    {
         float countDown = 0;
         while (countDown < duration)
         {
             if (obj == null) yield break;
 
             countDown += Time.deltaTime;
-            obj.position = Vector2.Lerp(start, end, countDown / duration);
+            obj.position = Vector3.Lerp(start, end, countDown / duration);
             
             yield return null;
         }
         if(obj != null) obj.position = end;
-    }    
+    }
+    public static IEnumerator IEScaleTo(Transform obj, Vector3 start, Vector3 end, float duration)
+    {
+        float countDown = 0;
+        while (countDown < duration)
+        {
+            if (obj == null) yield break;
+
+            countDown += Time.deltaTime;
+            obj.localScale = Vector3.Lerp(start, end, countDown / duration);
+
+            yield return null;
+        }
+        if (obj != null) obj.localScale = end;
+    }
+    public static IEnumerator IETransparentTo(Color lerpColor, float start, float end, float duration)
+    {
+        float countDown = 0;
+        while (countDown < duration)
+        {
+            if (lerpColor == null) yield break;
+
+            countDown += Time.deltaTime;
+            lerpColor.a = Mathf.Lerp(start, end, countDown / duration);
+
+            yield return null;
+        }
+        if (lerpColor != null) lerpColor.a = end;
+    }
 }
