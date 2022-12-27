@@ -75,9 +75,9 @@ public class CellObj : MonoBehaviour
             runAnim();
             if (cell.CellType == 1)
             {
-                GameController.action.CellNotEmpty--;
-                if (GameController.action.CellNotEmpty == 0)
-                    GameController.action.isShowStar = true;
+                GameController.Instance.CellNotEmpty--;
+                if (GameController.Instance.CellNotEmpty == 0)
+                    GameController.Instance.isShowStar = true;
             }
 
         }

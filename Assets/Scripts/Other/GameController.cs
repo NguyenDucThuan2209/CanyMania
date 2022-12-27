@@ -4,8 +4,19 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
+    private static GameController m_instance;
+    public static GameController Instance
+    {
+        get
+        {
+            if (m_instance == null)
+            {
+                m_instance = FindObjectOfType<GameController>();
+            }
 
-    public static GameController action;
+            return m_instance;
+        }
+    }
 
     public static float DROP_SPEED = 8;
     public static float DROP_DELAY = 0.5f;
@@ -46,10 +57,6 @@ public class GameController : MonoBehaviour
     private GameObject Selected;
 
     bool ishold;
-    void Awake()
-    {
-        action = this;
-    }
 
     IEnumerator Start()
     {
@@ -132,23 +139,26 @@ public class GameController : MonoBehaviour
     {
         JewelObj Jewel1 = obj1.GetComponent<JewelObj>();
         JewelObj Jewel2 = obj2.GetComponent<JewelObj>();
+
         List<JewelObj> NeiObj1 = Ulti.ListPlus(Jewel1.GetCollumn(Jewel2.jewel.JewelPosition, Jewel1.jewel.JewelType, null),
-                                         Jewel1.GetRow(Jewel2.jewel.JewelPosition, Jewel1.jewel.JewelType, null), Jewel1);
+                                               Jewel1.GetRow(Jewel2.jewel.JewelPosition, Jewel1.jewel.JewelType, null), Jewel1);
         List<JewelObj> NeiObj2 = Ulti.ListPlus(Jewel2.GetCollumn(Jewel1.jewel.JewelPosition, Jewel2.jewel.JewelType, null),
-                                         Jewel2.GetRow(Jewel1.jewel.JewelPosition, Jewel2.jewel.JewelType, null), Jewel2);
+                                               Jewel2.GetRow(Jewel1.jewel.JewelPosition, Jewel2.jewel.JewelType, null), Jewel2);
 
         if (Jewel1.jewel.JewelType == 99 || Jewel2.jewel.JewelType == 99)
+        {
             if (Jewel1.jewel.JewelType == 8 || Jewel2.jewel.JewelType == 8)
             {
                 Jewel1.SetBackAnimation(obj2);
                 Jewel2.SetBackAnimation(obj1);
                 return;
             }
+        }
 
         if (NeiObj1.Count >= 3 || NeiObj2.Count >= 3 || Jewel1.jewel.JewelType == 8 || Jewel2.jewel.JewelType == 8)
         {
-            Ulti.MoveTo(obj1, obj2.transform.localPosition, 0.2f);
-            Ulti.MoveTo(obj2, obj1.transform.localPosition, 0.2f);
+            StartCoroutine(Ulti.MoveTo(obj1.transform, obj1.transform.position, obj2.transform.position, 0.2f));
+            StartCoroutine(Ulti.MoveTo(obj2.transform, obj2.transform.position, obj1.transform.position, 0.2f));
             SwapJewelPosition(obj1, obj2);
             JewelProcess(NeiObj1, NeiObj2, obj1, obj2);
         }

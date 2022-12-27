@@ -5,23 +5,25 @@ using System.Collections.Generic;
 
 public class AdmobGA : MonoBehaviour
 {
+    private static AdmobGA m_instance;
+    public static AdmobGA Instance
+    {
+        get
+        {
+            if (m_instance == null)
+            {
+                m_instance = FindObjectOfType<AdmobGA>();
+            }
 
-    public static AdmobGA load;     // instance of this class
+            return m_instance;
+        }
+    }
     public GoogleAnalyticsV3 GA;    // instance of Google Analytics 
     public int NumberLevelPerShowRate = 10;
 
     void Awake()
     {
-        if (load == null)
-        {
-            // Makes the object target not be destroyed automatically when loading a new scene
-            DontDestroyOnLoad(gameObject); 
-            load = this;
-        }
-        else if (load != this)
-        {
-            Destroy(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {

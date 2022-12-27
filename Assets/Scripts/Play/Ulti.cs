@@ -21,86 +21,8 @@ public class Ulti : MonoBehaviour
         }
 
         return tmp;
-    }
+    }    
 
-    public static void MoveTo(GameObject obj, Vector2 NewPos, float duration)
-    {
-        obj.SetActive(true);
-        Animation anim = obj.GetComponent<Animation>();
-        //if (anim.GetClipCount() > 1)
-        //{
-        //    Destroy(anim.GetClip("Moveto"));
-        //}
-        anim.enabled = true;
-        AnimationClip animclip = new AnimationClip();
-#if UNITY_5
-            animclip.legacy = true;
-#endif
-        AnimationCurve curvex = AnimationCurve.Linear(0, obj.transform.localPosition.x, duration, NewPos.x);
-        AnimationCurve curvey = AnimationCurve.Linear(0, obj.transform.localPosition.y, duration, NewPos.y);
-        AnimationCurve curvenable = AnimationCurve.Linear(0, 1, duration, 0);
-
-        animclip.SetCurve("", typeof(Transform), "localPosition.x", curvex);
-        animclip.SetCurve("", typeof(Transform), "localPosition.y", curvey);
-        animclip.SetCurve("", typeof(Animation), "m_Enabled", curvenable);
-
-        anim.AddClip(animclip, "Moveto");
-        anim.Play("Moveto");
-        Destroy(animclip, duration);
-    }
-
-    public static void MoveTo(GameObject obj, Vector2 NewPos, float duration, float z)
-    {
-        Animation anim = obj.GetComponent<Animation>();
-        //if (anim.GetClipCount() > 1)
-        //{
-        //    anim.RemoveClip("Moveto");
-        //}
-        anim.enabled = true;
-        AnimationClip animclip = new AnimationClip();
-#if UNITY_5
-            animclip.legacy = true;
-#endif
-        AnimationCurve curvex = AnimationCurve.Linear(0, obj.transform.localPosition.x, duration, NewPos.x);
-        AnimationCurve curvey = AnimationCurve.Linear(0, obj.transform.localPosition.y, duration, NewPos.y);
-        AnimationCurve curvez = AnimationCurve.Linear(0, z, duration, z);
-        AnimationCurve curvenable = AnimationCurve.Linear(0, 1, duration, 0);
-
-        animclip.SetCurve("", typeof(Transform), "localPosition.x", curvex);
-        animclip.SetCurve("", typeof(Transform), "localPosition.y", curvey);
-        animclip.SetCurve("", typeof(Transform), "localPosition.z", curvez);
-        animclip.SetCurve("", typeof(Animation), "m_Enabled", curvenable);
-
-        anim.AddClip(animclip, "Moveto");
-        anim.Play("Moveto");
-        Destroy(animclip, duration);
-    }
-    public static void MoveTo(GameObject obj, Vector2 startpos, Vector2 NewPos, float duration, float z)
-    {
-        Animation anim = obj.GetComponent<Animation>();
-        //if (anim.GetClipCount() > 1)
-        //{
-        //    anim.RemoveClip("Moveto");
-        //}
-        anim.enabled = true;
-        AnimationClip animclip = new AnimationClip();
-#if UNITY_5
-                animclip.legacy = true;
-#endif
-        AnimationCurve curvex = AnimationCurve.Linear(0, startpos.x, duration, NewPos.x);
-        AnimationCurve curvey = AnimationCurve.Linear(0, startpos.y, duration, NewPos.y);
-        AnimationCurve curvez = AnimationCurve.Linear(0, z, duration, z);
-        AnimationCurve curvenable = AnimationCurve.Linear(0, 1, duration, 0);
-
-        animclip.SetCurve("", typeof(Transform), "localPosition.x", curvex);
-        animclip.SetCurve("", typeof(Transform), "localPosition.y", curvey);
-        animclip.SetCurve("", typeof(Transform), "localPosition.z", curvez);
-        animclip.SetCurve("", typeof(Animation), "m_Enabled", curvenable);
-
-        anim.AddClip(animclip, "Moveto");
-        anim.Play("Moveto");
-        Destroy(animclip, duration);
-    }
     public static IEnumerator IEDrop(GameObject obj, Vector2 NewPos, float speed)
     {
         JewelObj script = obj.GetComponent<JewelObj>();
@@ -131,4 +53,18 @@ public class Ulti : MonoBehaviour
         }
     }
 
+    public static IEnumerator MoveTo(Transform obj, Vector3 start, Vector3 end, float duration)
+    {        
+        float countDown = 0;
+        while (countDown < duration)
+        {
+            if (obj == null) yield break;
+
+            countDown += Time.deltaTime;
+            obj.position = Vector2.Lerp(start, end, countDown / duration);
+            
+            yield return null;
+        }
+        if(obj != null) obj.position = end;
+    }    
 }

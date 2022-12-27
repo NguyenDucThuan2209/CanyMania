@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-using Facebook.Unity;
+//using Facebook.Unity;
+
 public class ButtonActionController : MonoBehaviour
 {
 
@@ -33,8 +35,8 @@ public class ButtonActionController : MonoBehaviour
         PLayerInfo.MapPlayer = new Player();
         PLayerInfo.MapPlayer.Level = level;
         PLayerInfo.MapPlayer.HightScore = level;
-        PLayerInfo.MapPlayer.HightScore = PlayerPrefs.GetInt(PLayerInfo.KEY_CLASSIC_HISCORE, 0);
-        Application.LoadLevel("PlayScene");
+        PLayerInfo.MapPlayer.HightScore = PlayerPrefs.GetInt(PLayerInfo.KEY_CLASSIC_HISCORE, 0);        
+        SceneManager.LoadScene("PlayScene");
     }
 
 
@@ -56,7 +58,7 @@ public class ButtonActionController : MonoBehaviour
     {
         SoundController.Sound.Click();
         if (mode == 1)
-            Application.LoadLevel("MapScene");
+            SceneManager.LoadScene("MapScene");
         else
             HomeScene();
 
@@ -70,14 +72,14 @@ public class ButtonActionController : MonoBehaviour
     IEnumerator GotoScreen(string screen)
     {
         yield return new WaitForSeconds(0);
-        Application.LoadLevel(screen);
+        SceneManager.LoadScene(screen);
     }
 
     public void HomeScene()
     {
         SoundController.Sound.Click();
         Time.timeScale = 1;
-        Application.LoadLevel("HomeScene");
+        SceneManager.LoadScene("HomeScene");
     }
 
     /// <summary>
@@ -113,40 +115,6 @@ public class ButtonActionController : MonoBehaviour
             PlayerPrefs.SetInt("SOUND", 0);
             button.overrideSprite = ButtonSprite[2];
         }
-    }
-
-    public void OnShareClick()
-    {
-        //if(!FB.IsInitialized)
-        //{
-        //    FB.Init(OnInitComplete);
-        //}
-        //else if (FB.IsLoggedIn)
-        //{
-        //    FacebookController.load.Share();
-        //}
-        //else
-        //{
-        //    FacebookController.load.Login();
-        //}
-
-    }
-
-    void OnInitComplete()
-    {
-        //if (FB.IsInitialized && FB.IsLoggedIn)
-        //{
-        //    FacebookController.load.Share();
-        //}
-        //else
-        //{
-        //    FacebookController.load.Login();
-        //}
-    }
-
-    public void OnCloseDialog()
-    {
-
     }
 
 }

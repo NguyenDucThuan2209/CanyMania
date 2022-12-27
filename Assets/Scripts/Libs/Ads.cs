@@ -20,7 +20,7 @@ public class Ads : MonoBehaviour
         }
 
         // request Google Analytics
-        AdmobGA.load.GA.LogScreen(ModeName + "Level: " + PLayerInfo.MapPlayer.Level);
+        AdmobGA.Instance.GA.LogScreen(ModeName + "Level: " + PLayerInfo.MapPlayer.Level);
 
     }
 

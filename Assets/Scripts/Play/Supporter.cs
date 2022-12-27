@@ -26,11 +26,11 @@ public class Supporter : MonoBehaviour
 
     void Update()
     {
-        if (SP_DELAY > 0 && GameController.action.GameState == (int)Timer.GameState.PLAYING && !isNomove)
+        if (SP_DELAY > 0 && GameController.Instance.GameState == (int)Timer.GameState.PLAYING && !isNomove)
         {
             SP_DELAY -= Time.deltaTime;
         }
-        else if (!isNomove && GameController.action.GameState == (int)Timer.GameState.PLAYING)
+        else if (!isNomove && GameController.Instance.GameState == (int)Timer.GameState.PLAYING)
         {
             RefreshTime();
             isNoMoreMove();

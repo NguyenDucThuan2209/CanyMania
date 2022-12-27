@@ -77,7 +77,7 @@ public class JewelSpawner : MonoBehaviour
     {
         for (int x = 0; x < 7; x++)
             for (int y = 0; y < 9; y++)
-                if (JewelGrib[x, y] != null && JewelGribScript[x, y] != GameController.action.JewelStar)
+                if (JewelGrib[x, y] != null && JewelGribScript[x, y] != GameController.Instance.JewelStar)
                 {
                     Destroy(JewelGrib[x, y]);
                     JewelGribScript[x, y] = null;
@@ -134,7 +134,7 @@ public class JewelSpawner : MonoBehaviour
         {
             for (int y = 0; y < 9; y++)
             {
-                if (JewelGribScript[x, y] != null && JewelGribScript[x, y] != GameController.action.JewelStar)
+                if (JewelGribScript[x, y] != null && JewelGribScript[x, y] != GameController.Instance.JewelStar)
                     JewelGribScript[x, y].JewelEnable();
             }
         }
@@ -299,7 +299,7 @@ public class JewelSpawner : MonoBehaviour
         JewelScript.jewel.JewelPosition = pos;
         JewelGribScript[(int)pos.x, (int)pos.y] = JewelScript;
         JewelGrib[(int)pos.x, (int)pos.y] = tmp;
-        GameController.action.JewelStar = JewelScript;
+        GameController.Instance.JewelStar = JewelScript;
 
         StarEffect.SetActive(true);
     }

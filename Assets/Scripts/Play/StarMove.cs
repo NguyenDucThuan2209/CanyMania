@@ -24,8 +24,8 @@ public class StarMove : MonoBehaviour
 
         if (actived)
         {
-            X = JewelSpawner.spawn.JewelGrib[(int)GameController.action.JewelStar.jewel.JewelPosition.x, (int)GameController.action.JewelStar.jewel.JewelPosition.y].transform.position.x;
-            Y = JewelSpawner.spawn.JewelGrib[(int)GameController.action.JewelStar.jewel.JewelPosition.x, (int)GameController.action.JewelStar.jewel.JewelPosition.y].transform.position.y;
+            X = JewelSpawner.spawn.JewelGrib[(int)GameController.Instance.JewelStar.jewel.JewelPosition.x, (int)GameController.Instance.JewelStar.jewel.JewelPosition.y].transform.position.x;
+            Y = JewelSpawner.spawn.JewelGrib[(int)GameController.Instance.JewelStar.jewel.JewelPosition.x, (int)GameController.Instance.JewelStar.jewel.JewelPosition.y].transform.position.y;
         }
 
         if (X != -1 && X != transform.localPosition.x)

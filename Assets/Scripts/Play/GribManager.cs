@@ -58,14 +58,14 @@ public class GribManager : MonoBehaviour
 
     void GribCreate(int[,] map)
     {
-        GameController.action.CellNotEmpty = 0;
+        GameController.Instance.CellNotEmpty = 0;
         GribCellObj = new CellObj[7, 9];
         for (int x = 0; x < 7; x++)
         {
             for (int y = 0 ; y< 9; y++)
             {
                 if (map[x, y] > 1)
-                    GameController.action.CellNotEmpty++;
+                    GameController.Instance.CellNotEmpty++;
                 if (map[x, y] > 0)
                     CellInstantiate(x, y, map[x, y]);
                 EffectSpawner.effect.JewelCrashArray[x, y] = EffectSpawner.effect.JewelCash(new Vector3(x,y));

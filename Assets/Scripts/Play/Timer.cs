@@ -94,7 +94,7 @@ public class Timer : MonoBehaviour
     }
     IEnumerator IEScoreBarProcess()
     {
-        while (ScoreStack > 0 && GameController.action.GameState == (int)GameState.PLAYING)
+        while (ScoreStack > 0 && GameController.Instance.GameState == (int)GameState.PLAYING)
         {
             ScoreStack -= 10;
             if (PLayerInfo.Info.Score + 10 < 5000 * PLayerInfo.MapPlayer.Level)
@@ -113,14 +113,14 @@ public class Timer : MonoBehaviour
     }
     public void Tick()
     {
-        if (GameTime > 0 && GameController.action.GameState == (int)GameState.PLAYING)
+        if (GameTime > 0 && GameController.Instance.GameState == (int)GameState.PLAYING)
         {
             GameTime -= Time.deltaTime;
             timebarprocess(GameTime);
         }
-        else if (GameController.action.GameState == (int)GameState.PLAYING)
+        else if (GameController.Instance.GameState == (int)GameState.PLAYING)
         {
-            GameController.action.GameState = (int)GameState.LOST;
+            GameController.Instance.GameState = (int)GameState.LOST;
             GameTime = 0;
             Lost();
             update.enabled = false;
@@ -130,7 +130,7 @@ public class Timer : MonoBehaviour
     public void Win()
     {
         PlayerPrefs.SetInt("LevelShowRate", PlayerPrefs.GetInt("LevelShowRate") + 1);
-        GameController.action.GameState = (int)GameState.WIN;
+        GameController.Instance.GameState = (int)GameState.WIN;
         NoSelect.SetActive(true);
         StartCoroutine(IEWin());
         Debug.Log("WIN");
@@ -138,7 +138,7 @@ public class Timer : MonoBehaviour
     public void Lost()
     {
         PlayerPrefs.SetInt("LevelShowRate", PlayerPrefs.GetInt("LevelShowRate") + 1);
-        GameController.action.GameState = (int)GameState.LOST;
+        GameController.Instance.GameState = (int)GameState.LOST;
         NoSelect.SetActive(true);
         EffectSpawner.effect.SetScore(PLayerInfo.Info.Score);
         StartCoroutine(DisableAll());
@@ -149,9 +149,9 @@ public class Timer : MonoBehaviour
     public void Pause()
     {
         SoundController.Sound.Click();
-        if (GameController.action.GameState == (int)GameState.PLAYING)
+        if (GameController.Instance.GameState == (int)GameState.PLAYING)
         {
-            GameController.action.GameState = (int)GameState.PAUSE;
+            GameController.Instance.GameState = (int)GameState.PAUSE;
             NoSelect.SetActive(true);
             PauseUI.SetActive(true);
             Time.timeScale = 0;
@@ -161,9 +161,9 @@ public class Timer : MonoBehaviour
     public void Resume()
     {
         SoundController.Sound.Click();
-        if (GameController.action.GameState == (int)GameState.PAUSE)
+        if (GameController.Instance.GameState == (int)GameState.PAUSE)
         {
-            GameController.action.GameState = (int)GameState.PLAYING;
+            GameController.Instance.GameState = (int)GameState.PLAYING;
             Time.timeScale = 1;
             NoSelect.SetActive(false);
             PauseUI.SetActive(false);
@@ -204,7 +204,7 @@ public class Timer : MonoBehaviour
     }
     public void ClassicLvUp()
     {
-        GameController.action.GameState = (int)GameState.WIN;
+        GameController.Instance.GameState = (int)GameState.WIN;
         NoSelect.SetActive(true);
         StartCoroutine(UpLevel());
 
@@ -218,9 +218,9 @@ public class Timer : MonoBehaviour
     IEnumerator IEWin()
     {
         DisableJewel(true);
-        EffectSpawner.effect.StarWinEffect(GameController.action.JewelStar.gameObject.transform.position);
+        EffectSpawner.effect.StarWinEffect(GameController.Instance.JewelStar.gameObject.transform.position);
         SoundController.Sound.Win();
-        GameController.action.JewelStar.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        GameController.Instance.JewelStar.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
         WinUI.SetActive(true);
         showFullAds();
@@ -264,7 +264,7 @@ public class Timer : MonoBehaviour
                 }
                 else
                 {
-                    if (JewelSpawner.spawn.JewelGribScript[x, y] != null && JewelSpawner.spawn.JewelGribScript[x, y] != GameController.action.JewelStar)
+                    if (JewelSpawner.spawn.JewelGribScript[x, y] != null && JewelSpawner.spawn.JewelGribScript[x, y] != GameController.Instance.JewelStar)
                         JewelSpawner.spawn.JewelGribScript[x, y].JewelDisable();
                 }
             }

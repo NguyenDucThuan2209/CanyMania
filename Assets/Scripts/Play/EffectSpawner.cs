@@ -74,14 +74,14 @@ public class EffectSpawner : MonoBehaviour
         {
             if (PLayerInfo.Info.Score < PLayerInfo.MapPlayer.Level * 5000)
                 Timer.timer.ScoreBarProcess(scorebonus);
-            else if (GameController.action.GameState == (int)Timer.GameState.PLAYING)
+            else if (GameController.Instance.GameState == (int)Timer.GameState.PLAYING)
             {
                 Timer.timer.ClassicLvUp();
             }
         }
         else
         {
-            if (GameController.action.GameState == (int)Timer.GameState.PLAYING)
+            if (GameController.Instance.GameState == (int)Timer.GameState.PLAYING)
                 PLayerInfo.Info.Score += scorebonus;
             BonusEffect();
             MiniStar(pos,jewel);
@@ -99,7 +99,7 @@ public class EffectSpawner : MonoBehaviour
         EnergyInc();
         if (ThunderCount >= 21)
         {
-            GameController.action.DestroyRandom();
+            GameController.Instance.DestroyRandom();
             ThunderCount = 0;
             Energy.fillAmount = 0;
             EnergyStack = 0;
@@ -107,7 +107,7 @@ public class EffectSpawner : MonoBehaviour
         if (PowerCount >= 32)
         {
             PowerCount = 0;
-            GameController.action.isAddPower = true;
+            GameController.Instance.isAddPower = true;
         }
     }
 
@@ -351,8 +351,8 @@ public class EffectSpawner : MonoBehaviour
             tmp.GetComponent<SpriteRenderer>().sprite = jewelSpawner.JewelSprite[7];
         }
         tmp.transform.SetParent(parent.transform, false);
-        tmp.transform.localScale = new Vector3(0.3f,0.3f,0.3f);
-        Ulti.MoveTo(tmp, startpos, new Vector2(-2.485f, 4.418f), 1.2f, -2.2f);
+        tmp.transform.localScale = new Vector3(0.3f,0.3f,0.3f);        
+        StartCoroutine(Ulti.MoveTo(tmp.transform, startpos, new Vector3(-2.485f, 4.418f, -2.2f), 1.2f));
         Destroy(tmp, 1.2f);
     }
 }

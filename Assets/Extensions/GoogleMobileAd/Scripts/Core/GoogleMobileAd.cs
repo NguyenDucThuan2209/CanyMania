@@ -37,7 +37,7 @@ public class GoogleMobileAd
         switch (Application.platform)
         {
             case RuntimePlatform.IPhonePlayer:
-                controller = IOSAdMobController.instance;
+                controller = IOSAdMobController.Instance;
                 controller.Init(GoogleMobileAdSettings.Instance.IOS_BannersUnitId);
                 if (!GoogleMobileAdSettings.Instance.IOS_InterstisialsUnitId.Equals(string.Empty))
                 {
@@ -45,7 +45,7 @@ public class GoogleMobileAd
                 }
                 break;
             case RuntimePlatform.Android:
-                controller = AndroidAdMobController.instance;
+                controller = AndroidAdMobController.Instance;
                 controller.Init(GoogleMobileAdSettings.Instance.Android_BannersUnitId, GoogleMobileAdSettings.Instance.Android_InterstisialsUnitId);
                 //if (!GoogleMobileAdSettings.Instance.Android_InterstisialsUnitId.Equals(string.Empty))
                 //{
@@ -54,7 +54,7 @@ public class GoogleMobileAd
                 break;
 
             default:
-                controller = WP8AdMobController.instance;
+                controller = WP8AdMobController.Instance;
                 controller.Init(GoogleMobileAdSettings.Instance.WP8_BannersUnitId);
                 if (!GoogleMobileAdSettings.Instance.WP8_InterstisialsUnitId.Equals(string.Empty))
                 {

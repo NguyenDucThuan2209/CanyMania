@@ -31,19 +31,19 @@ public class JewelObj : MonoBehaviour
         switch (power)
         {
             case 1:
-                GameController.action.PBoom((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
+                GameController.Instance.PBoom((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
                 EffectSpawner.effect.boom(this.gameObject.transform.position);
                 break;
             case 2:
                 EffectSpawner.effect.FireArrow(transform.position, false);
-                GameController.action.PDestroyRow((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
+                GameController.Instance.PDestroyRow((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
                 break;
             case 3:
                 EffectSpawner.effect.FireArrow(transform.position, true);
-                GameController.action.PDestroyCollumn((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
+                GameController.Instance.PDestroyCollumn((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
                 break;
             case 4:
-                GameController.action.PBonusTime();
+                GameController.Instance.PBonusTime();
                 break;
         }
     }
@@ -59,21 +59,21 @@ public class JewelObj : MonoBehaviour
     {
         RemoveFromList((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
         yield return new WaitForSeconds(DELAY - 0.015f);
-        Ulti.MoveTo(this.gameObject, pos, DELAY);
+        StartCoroutine(Ulti.MoveTo(transform, transform.position, pos, DELAY));
 
         StartCoroutine(_Destroy());
     }
     IEnumerator _Destroy()
     {
         GribManager.cell.GribCellObj[(int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y].CelltypeProcess();
-        GameController.action.CellRemoveEffect((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
+        GameController.Instance.CellRemoveEffect((int)jewel.JewelPosition.x, (int)jewel.JewelPosition.y);
 
         yield return new WaitForSeconds(DELAY);
         if (jewel.JewelPower > 0)
         {
             PowerProcess(jewel.JewelPower);
         }
-        GameController.action.drop.DELAY = GameController.DROP_DELAY;
+        GameController.Instance.drop.DELAY = GameController.DROP_DELAY;
         JewelCrash();
         yield return new WaitForEndOfFrame();
         EffectSpawner.effect.ScoreInc(this.gameObject.transform.position,jewel);
@@ -273,7 +273,7 @@ public class JewelObj : MonoBehaviour
         }
         else
         {
-            GameController.action.WinChecker();
+            GameController.Instance.WinChecker();
         }
 
 
@@ -291,12 +291,12 @@ public class JewelObj : MonoBehaviour
         }
         int max = Mathf.Max(_listint.ToArray());
         int idx = _listint.IndexOf(max);
-        GameController.action.JewelProcess(list[idx].getList(), this.gameObject);
+        GameController.Instance.JewelProcess(list[idx].getList(), this.gameObject);
     }
 
     public void Bounce()
     {
-        if (GameController.action.GameState == (int)Timer.GameState.PLAYING && !Supporter.sp.isNomove)
+        if (GameController.Instance.GameState == (int)Timer.GameState.PLAYING && !Supporter.sp.isNomove)
         {
             Animation anim = render.GetComponent<Animation>();
             anim.enabled = true;

@@ -86,10 +86,12 @@ public class DataLoader : MonoBehaviour
         processbar.fillAmount = 0.3f;
         yield return new WaitForSeconds(0.3f);
         Debug.Log("1");
+
         PlayerUtils pu = new PlayerUtils();
         MyData = pu.Load();
         processbar.fillAmount = 0.5f;
         Debug.Log("2");
+
         yield return new WaitForSeconds(0.3f);
 
         for (int i = 0; i < 99; i++)
@@ -102,6 +104,7 @@ public class DataLoader : MonoBehaviour
             yield return null;
         }
         Debug.Log("3");
+
         processbar.transform.parent.gameObject.SetActive(false);
         CameraMovement.mcamera.RectBanner.HideRectBanner();
         DataLoader.enableclick = true;
@@ -110,7 +113,7 @@ public class DataLoader : MonoBehaviour
             StarPointMove();
             yield return new WaitForSeconds(STARMOVE_TIME);
 
-            if (PlayerPrefs.GetInt("LevelShowRate") >= AdmobGA.load.NumberLevelPerShowRate)
+            if (PlayerPrefs.GetInt("LevelShowRate") >= AdmobGA.Instance.NumberLevelPerShowRate)
             {
                 CameraMovement.mcamera.ShowRatePopup();
             }
@@ -124,7 +127,7 @@ public class DataLoader : MonoBehaviour
         }
         else
         {
-            if (PlayerPrefs.GetInt("LevelShowRate") >= AdmobGA.load.NumberLevelPerShowRate)
+            if (PlayerPrefs.GetInt("LevelShowRate") >= AdmobGA.Instance.NumberLevelPerShowRate)
             {
                 CameraMovement.mcamera.ShowRatePopup();
             }
@@ -164,7 +167,7 @@ public class DataLoader : MonoBehaviour
     {
         DataLoader.enableclick = false;
         Vector3 newpos = listmap[CameraMovement.StarPointMoveIndex].transform.position + new Vector3(0, 0, -0.3f);
-        Ulti.MoveTo(CameraMovement.mcamera.StarPoint, newpos, STARMOVE_TIME, newpos.z);
+        StartCoroutine(Ulti.MoveTo(CameraMovement.mcamera.transform, CameraMovement.mcamera.StarPoint.transform.position, newpos, STARMOVE_TIME));
         StartCoroutine(stopanimation());
     }
     IEnumerator stopanimation()

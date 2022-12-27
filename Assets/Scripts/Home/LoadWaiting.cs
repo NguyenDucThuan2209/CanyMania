@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LoadWaiting : MonoBehaviour
@@ -22,6 +23,6 @@ public class LoadWaiting : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         AdmobFB.load.RectBanner.HideRectBanner();
-        Application.LoadLevel("HomeScene");
+        SceneManager.LoadScene("HomeScene");
     }
 }

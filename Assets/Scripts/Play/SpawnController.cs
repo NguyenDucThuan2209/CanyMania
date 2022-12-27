@@ -49,7 +49,7 @@ public class SpawnController : MonoBehaviour
             }
             for (int y = s; y < 9; y++)
             {
-                if (GameController.action.GameState == (int)Timer.GameState.PLAYING)
+                if (GameController.Instance.GameState == (int)Timer.GameState.PLAYING)
                     if (GribManager.cell.GribCellObj[x, y] != null && JewelSpawner.spawn.JewelGribScript[x, y] == null)
                     {
 
@@ -108,10 +108,10 @@ public class SpawnController : MonoBehaviour
     }
     void BonusPower()
     {
-        if (GameController.action.isAddPower)
+        if (GameController.Instance.isAddPower)
         {
-            GameController.action.AddBonusPower();
-            GameController.action.isAddPower = false;
+            GameController.Instance.AddBonusPower();
+            GameController.Instance.isAddPower = false;
         }
     }
 
@@ -120,11 +120,11 @@ public class SpawnController : MonoBehaviour
     /// </summary>
     void ShowStar()
     {
-        if (GameController.action.isShowStar)
+        if (GameController.Instance.isShowStar)
         {
-            GameController.action.isShowStar = false;
-            GameController.action.ShowStar();
-            GameController.action.isStar = true;
+            GameController.Instance.isShowStar = false;
+            GameController.Instance.ShowStar();
+            GameController.Instance.isStar = true;
         }
     }
 }
