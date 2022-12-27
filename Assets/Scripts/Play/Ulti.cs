@@ -53,6 +53,22 @@ public class Ulti : MonoBehaviour
         }
     }
 
+    public static IEnumerator IELocalMoveTo(Transform obj, Vector3 start, Vector3 end, float duration)
+    {
+        float countDown = 0;
+        while (countDown < duration)
+        {
+            if (obj == null)
+                yield break;
+
+            countDown += Time.deltaTime;
+            obj.localPosition = Vector3.Lerp(start, end, countDown / duration);
+
+            yield return null;
+        }
+        if (obj != null)
+            obj.position = end;
+    }    
     public static IEnumerator IEMoveTo(Transform obj, Vector3 start, Vector3 end, float duration)
     {
         float countDown = 0;
