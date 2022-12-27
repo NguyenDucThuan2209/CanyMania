@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB98222D-80DC-D66E-4508-123EE467EE00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.6.3f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_3;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_3;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAdsWP8">
+      <HintPath>Assets\Plugins\GoogleAdsWP8.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CandyMania.Plugins.csproj">
+      <Project>{3224A7C4-5D2B-16B2-5C29-EC1BF93A534D}</Project>
+      <Name>CandyMania.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\AudienceNetwork\Library\AdHandler.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdSettings.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdUtility.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdView.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\InterstitialAd.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\NativeAd.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\SdkVersion.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\AdViewFacebook.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\InterstitialAdFacebook.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Core\AMMSettings.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ActivityTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ApplicationTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_BaseTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ManifestManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ManifestPermission.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ManifestTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_PropertyTemplate.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Example\Scripts\AdMobBanner.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Example\Scripts\AdMobBannerInterstitial.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Example\Scripts\AdMobRectBanner.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Example\Scripts\CustomInterstisialExample.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Example\Scripts\GoogleAdsExample.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\Core\GoogleMobileAd.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\Core\GoogleMobileAdSettings.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\IOS\IOSADBanner.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\IOS\IOSAdMobController.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\Templates\GADTestDevice.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\WP8\WP8ADBanner.cs" />
+    <Compile Include="Assets\Extensions\GoogleMobileAd\Scripts\WP8\WP8AdMobController.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Ad\AndroidAdMobController.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AN_GoogleAdProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AN_ProxyPool.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_AppInvitesProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_BillingProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_FBProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSGeneralProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSGiftsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSInvitationProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSQuestsEventsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSRTMProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GoogleAnalyticsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GooglePlayUtilsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_ImmersiveModeProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_LicenseManagerProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_PlusButtonProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_SocialSharingProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_TVControllerProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AndroidNative.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AdroidActivityResultCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AndroidGravity.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AndroidLogLevel.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AndroidMonth.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleBase\GoogleCloudSlot.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleBase\GoogleGender.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleBase\GoogleGravity.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleMobileAd\GADBannerSize.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleMobileAd\GADInAppResolution.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPAchievementState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPAchievementType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPBoardTimeSpan.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPCollectionType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPConnectionState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPGameRequestType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPLogLevel.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_AppStateStatusCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_ConnectionResultCode.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_GamesActivityResultCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_GamesStatusCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_InvitationType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_MatchesSortOrder.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_PlayServicesStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_MessageType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_PackageType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_ParticipantStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_RoomStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\Quests\GP_QuestSortOrder.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\Quests\GP_QuestState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\Quests\GP_QuestsSelect.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_MatchStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_MatchTurnStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_MatchesSortOrder.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_ParticipantResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Events\FacebookEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Events\GoogleMobileAdEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Events\TwitterEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\GoogleMobileAdBanner.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\GoogleMobileAdInterface.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidADBanner.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidActivityResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidGameActivityResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AsyncTask.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GADBannerIdFactory.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GPAchievement.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GPGameRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_Invite.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_Participant.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_ParticipantResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_NETWORK_PACKAGE.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_ReliableMessageDeliveredResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_ReliableMessageSentResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_Result.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_Room.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GoogleCloudResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GooglePlayConnectionResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GooglePlayGiftRequestResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GooglePlayResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Quests\GP_Event.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Quests\GP_Quest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_AchievementResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_GCM_RegistrationResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_QuestResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_SnapshotConflict.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_SpanshotLoadResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\Invitations\AN_InvitationInboxCloseResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\SavedGames\GP_DeleteSnapshotResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_CancelMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_LeaveMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_LoadMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_LoadMatchesResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_MatchInitiatedResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_MatchReceivedResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_MatchRemovedResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_UpdateMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\SavedGames\GP_Snapshot.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\SavedGames\GP_SnapshotMeta.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\TBM\GP_TBM_Match.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\ANMiniJSON.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\PlayServiceUtil.cs" />
+    <Compile Include="Assets\Extensions\IOSDeploy\Scripts\Core\Config\ISDSettings.cs" />
+    <Compile Include="Assets\Extensions\IOSDeploy\Scripts\Core\Enum\ISD_PlistValueTypes.cs" />
+    <Compile Include="Assets\Extensions\IOSDeploy\Scripts\Core\Models\ISD_Framework.cs" />
+    <Compile Include="Assets\Extensions\IOSDeploy\Scripts\Core\Models\ISD_Lib.cs" />
+    <Compile Include="Assets\Extensions\IOSDeploy\Scripts\Core\Models\ISD_Variable.cs" />
+    <Compile Include="Assets\Extensions\IOSDeploy\Scripts\Core\Models\ISD_VariableListed.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Core\SA_Config.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Advertisement\SA_EditorAd.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\UI\Scripts\SA_EditorTestingUIController.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\UI\Scripts\UIHightDependence.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\UI\Scripts\UIWidthDependence.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Utilities\SA_EditorTesting.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\FileStaticAPI.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\SA_DataConverter.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\SA_IdFactory.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\SA_ScreenShotMaker.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\SA_Singleton.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Loaders\SA_PrefabAsyncLoader.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Modules\SA_ModulesInfo.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Patterns\SA_NonMonoSingleton.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\WWWTextureLoader.cs" />
+    <Compile Include="Assets\Scripts\Home\Home.cs" />
+    <Compile Include="Assets\Scripts\Home\LoadWaiting.cs" />
+    <Compile Include="Assets\Scripts\Libs\AdmobFB.cs" />
+    <Compile Include="Assets\Scripts\Libs\AdmobGA.cs" />
+    <Compile Include="Assets\Scripts\Libs\Ads.cs" />
+    <Compile Include="Assets\Scripts\Map\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Map\DataLoader.cs" />
+    <Compile Include="Assets\Scripts\Map\Map.cs" />
+    <Compile Include="Assets\Scripts\Object\Cell.cs" />
+    <Compile Include="Assets\Scripts\Object\CellObj.cs" />
+    <Compile Include="Assets\Scripts\Object\Jewel.cs" />
+    <Compile Include="Assets\Scripts\Object\JewelObj.cs" />
+    <Compile Include="Assets\Scripts\Object\PLayerInfo.cs" />
+    <Compile Include="Assets\Scripts\Object\Player.cs" />
+    <Compile Include="Assets\Scripts\Other\ButtonActionController.cs" />
+    <Compile Include="Assets\Scripts\Other\GameController.cs" />
+    <Compile Include="Assets\Scripts\Other\MusicController.cs" />
+    <Compile Include="Assets\Scripts\Other\RatingMoreGame.cs" />
+    <Compile Include="Assets\Scripts\Other\SoundController.cs" />
+    <Compile Include="Assets\Scripts\Play\EffectSpawner.cs" />
+    <Compile Include="Assets\Scripts\Play\GribManager.cs" />
+    <Compile Include="Assets\Scripts\Play\JewelSpawner.cs" />
+    <Compile Include="Assets\Scripts\Play\LoseUI.cs" />
+    <Compile Include="Assets\Scripts\Play\SetBackground.cs" />
+    <Compile Include="Assets\Scripts\Play\SoundMusicButtonControll.cs" />
+    <Compile Include="Assets\Scripts\Play\SpawnController.cs" />
+    <Compile Include="Assets\Scripts\Play\StarMove.cs" />
+    <Compile Include="Assets\Scripts\Play\Supporter.cs" />
+    <Compile Include="Assets\Scripts\Play\Timer.cs" />
+    <Compile Include="Assets\Scripts\Play\TimerUpdate.cs" />
+    <Compile Include="Assets\Scripts\Play\Ulti.cs" />
+    <Compile Include="Assets\Scripts\Play\WinUI.cs" />
+    <Compile Include="Assets\Scripts\Play\glass.cs" />
+    <Compile Include="Assets\Scripts\Resolution\MultiResolution.cs" />
+    <Compile Include="Assets\Scripts\Resolution\Resolution.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AudienceNetwork\Audience Network README.txt" />
+    <None Include="Assets\AudienceNetwork\Editor\Android\DefaultAndroidManifest.xml" />
+    <None Include="Assets\AudienceNetwork\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Extensions\AndroidManifestManager\default.xml" />
+    <None Include="Assets\Extensions\GoogleMobileAd\Documentation\GMA_VersionNotes.txt" />
+    <None Include="Assets\Fonts\Textured Text Shader.shader" />
+    <None Include="Assets\Plugins\Android\AN_Res\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\values\analytics.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\values\ids.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\values\version.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\xml\file_paths.xml" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\res\values\strings.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\values\analytics.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\values\ids.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\values\version.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\xml\file_paths.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\app_licensing\an_licensing_library.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\an_googleplay.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\google-play-services.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\libs\an_sa_soomla.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\libs\android-support-v4.txt" />
+    <None Include="Assets\Plugins\StansAssets\IOS\GMA_SA_Lib.h.txt" />
+    <None Include="Assets\Plugins\StansAssets\IOS\GMA_SA_Lib.m.txt" />
+    <None Include="Assets\Plugins\StansAssets\IOS\GMA_SA_Lib_Proxy.mm.txt" />
+    <None Include="Assets\Plugins\StansAssets\Versions\GMA_VersionInfo.txt" />
+    <None Include="Assets\Plugins\WP8\GoogleAds.XML" />
+    <None Include="Assets\Resources\Data.txt" />
+    <None Include="Assets\Resources\Maps\1.txt" />
+    <None Include="Assets\Resources\Maps\10.txt" />
+    <None Include="Assets\Resources\Maps\100.txt" />
+    <None Include="Assets\Resources\Maps\101.txt" />
+    <None Include="Assets\Resources\Maps\102.txt" />
+    <None Include="Assets\Resources\Maps\103.txt" />
+    <None Include="Assets\Resources\Maps\104.txt" />
+    <None Include="Assets\Resources\Maps\105.txt" />
+    <None Include="Assets\Resources\Maps\106.txt" />
+    <None Include="Assets\Resources\Maps\107.txt" />
+    <None Include="Assets\Resources\Maps\108.txt" />
+    <None Include="Assets\Resources\Maps\109.txt" />
+    <None Include="Assets\Resources\Maps\11.txt" />
+    <None Include="Assets\Resources\Maps\110.txt" />
+    <None Include="Assets\Resources\Maps\111.txt" />
+    <None Include="Assets\Resources\Maps\112.txt" />
+    <None Include="Assets\Resources\Maps\113.txt" />
+    <None Include="Assets\Resources\Maps\114.txt" />
+    <None Include="Assets\Resources\Maps\115.txt" />
+    <None Include="Assets\Resources\Maps\116.txt" />
+    <None Include="Assets\Resources\Maps\117.txt" />
+    <None Include="Assets\Resources\Maps\118.txt" />
+    <None Include="Assets\Resources\Maps\119.txt" />
+    <None Include="Assets\Resources\Maps\12.txt" />
+    <None Include="Assets\Resources\Maps\120.txt" />
+    <None Include="Assets\Resources\Maps\121.txt" />
+    <None Include="Assets\Resources\Maps\122.txt" />
+    <None Include="Assets\Resources\Maps\123.txt" />
+    <None Include="Assets\Resources\Maps\124.txt" />
+    <None Include="Assets\Resources\Maps\125.txt" />
+    <None Include="Assets\Resources\Maps\126.txt" />
+    <None Include="Assets\Resources\Maps\127.txt" />
+    <None Include="Assets\Resources\Maps\128.txt" />
+    <None Include="Assets\Resources\Maps\129.txt" />
+    <None Include="Assets\Resources\Maps\13.txt" />
+    <None Include="Assets\Resources\Maps\130.txt" />
+    <None Include="Assets\Resources\Maps\131.txt" />
+    <None Include="Assets\Resources\Maps\132.txt" />
+    <None Include="Assets\Resources\Maps\133.txt" />
+    <None Include="Assets\Resources\Maps\134.txt" />
+    <None Include="Assets\Resources\Maps\135.txt" />
+    <None Include="Assets\Resources\Maps\136.txt" />
+    <None Include="Assets\Resources\Maps\137.txt" />
+    <None Include="Assets\Resources\Maps\138.txt" />
+    <None Include="Assets\Resources\Maps\139.txt" />
+    <None Include="Assets\Resources\Maps\14.txt" />
+    <None Include="Assets\Resources\Maps\140.txt" />
+    <None Include="Assets\Resources\Maps\141.txt" />
+    <None Include="Assets\Resources\Maps\142.txt" />
+    <None Include="Assets\Resources\Maps\143.txt" />
+    <None Include="Assets\Resources\Maps\144.txt" />
+    <None Include="Assets\Resources\Maps\145.txt" />
+    <None Include="Assets\Resources\Maps\146.txt" />
+    <None Include="Assets\Resources\Maps\147.txt" />
+    <None Include="Assets\Resources\Maps\148.txt" />
+    <None Include="Assets\Resources\Maps\149.txt" />
+    <None Include="Assets\Resources\Maps\15.txt" />
+    <None Include="Assets\Resources\Maps\150.txt" />
+    <None Include="Assets\Resources\Maps\151.txt" />
+    <None Include="Assets\Resources\Maps\152.txt" />
+    <None Include="Assets\Resources\Maps\153.txt" />
+    <None Include="Assets\Resources\Maps\154.txt" />
+    <None Include="Assets\Resources\Maps\155.txt" />
+    <None Include="Assets\Resources\Maps\156.txt" />
+    <None Include="Assets\Resources\Maps\157.txt" />
+    <None Include="Assets\Resources\Maps\158.txt" />
+    <None Include="Assets\Resources\Maps\159.txt" />
+    <None Include="Assets\Resources\Maps\16.txt" />
+    <None Include="Assets\Resources\Maps\160.txt" />
+    <None Include="Assets\Resources\Maps\161.txt" />
+    <None Include="Assets\Resources\Maps\162.txt" />
+    <None Include="Assets\Resources\Maps\163.txt" />
+    <None Include="Assets\Resources\Maps\164.txt" />
+    <None Include="Assets\Resources\Maps\165.txt" />
+    <None Include="Assets\Resources\Maps\166.txt" />
+    <None Include="Assets\Resources\Maps\167.txt" />
+    <None Include="Assets\Resources\Maps\168.txt" />
+    <None Include="Assets\Resources\Maps\169.txt" />
+    <None Include="Assets\Resources\Maps\17.txt" />
+    <None Include="Assets\Resources\Maps\170.txt" />
+    <None Include="Assets\Resources\Maps\171.txt" />
+    <None Include="Assets\Resources\Maps\172.txt" />
+    <None Include="Assets\Resources\Maps\173.txt" />
+    <None Include="Assets\Resources\Maps\174.txt" />
+    <None Include="Assets\Resources\Maps\175.txt" />
+    <None Include="Assets\Resources\Maps\176.txt" />
+    <None Include="Assets\Resources\Maps\177.txt" />
+    <None Include="Assets\Resources\Maps\178.txt" />
+    <None Include="Assets\Resources\Maps\179.txt" />
+    <None Include="Assets\Resources\Maps\18.txt" />
+    <None Include="Assets\Resources\Maps\180.txt" />
+    <None Include="Assets\Resources\Maps\181.txt" />
+    <None Include="Assets\Resources\Maps\182.txt" />
+    <None Include="Assets\Resources\Maps\183.txt" />
+    <None Include="Assets\Resources\Maps\184.txt" />
+    <None Include="Assets\Resources\Maps\185.txt" />
+    <None Include="Assets\Resources\Maps\186.txt" />
+    <None Include="Assets\Resources\Maps\187.txt" />
+    <None Include="Assets\Resources\Maps\188.txt" />
+    <None Include="Assets\Resources\Maps\189.txt" />
+    <None Include="Assets\Resources\Maps\19.txt" />
+    <None Include="Assets\Resources\Maps\190.txt" />
+    <None Include="Assets\Resources\Maps\191.txt" />
+    <None Include="Assets\Resources\Maps\192.txt" />
+    <None Include="Assets\Resources\Maps\193.txt" />
+    <None Include="Assets\Resources\Maps\194.txt" />
+    <None Include="Assets\Resources\Maps\195.txt" />
+    <None Include="Assets\Resources\Maps\196.txt" />
+    <None Include="Assets\Resources\Maps\197.txt" />
+    <None Include="Assets\Resources\Maps\198.txt" />
+    <None Include="Assets\Resources\Maps\199.txt" />
+    <None Include="Assets\Resources\Maps\2.txt" />
+    <None Include="Assets\Resources\Maps\20.txt" />
+    <None Include="Assets\Resources\Maps\200.txt" />
+    <None Include="Assets\Resources\Maps\201.txt" />
+    <None Include="Assets\Resources\Maps\202.txt" />
+    <None Include="Assets\Resources\Maps\203.txt" />
+    <None Include="Assets\Resources\Maps\204.txt" />
+    <None Include="Assets\Resources\Maps\205.txt" />
+    <None Include="Assets\Resources\Maps\206.txt" />
+    <None Include="Assets\Resources\Maps\207.txt" />
+    <None Include="Assets\Resources\Maps\208.txt" />
+    <None Include="Assets\Resources\Maps\209.txt" />
+    <None Include="Assets\Resources\Maps\21.txt" />
+    <None Include="Assets\Resources\Maps\210.txt" />
+    <None Include="Assets\Resources\Maps\211.txt" />
+    <None Include="Assets\Resources\Maps\212.txt" />
+    <None Include="Assets\Resources\Maps\213.txt" />
+    <None Include="Assets\Resources\Maps\214.txt" />
+    <None Include="Assets\Resources\Maps\215.txt" />
+    <None Include="Assets\Resources\Maps\216.txt" />
+    <None Include="Assets\Resources\Maps\217.txt" />
+    <None Include="Assets\Resources\Maps\218.txt" />
+    <None Include="Assets\Resources\Maps\219.txt" />
+    <None Include="Assets\Resources\Maps\22.txt" />
+    <None Include="Assets\Resources\Maps\220.txt" />
+    <None Include="Assets\Resources\Maps\221.txt" />
+    <None Include="Assets\Resources\Maps\222.txt" />
+    <None Include="Assets\Resources\Maps\223.txt" />
+    <None Include="Assets\Resources\Maps\224.txt" />
+    <None Include="Assets\Resources\Maps\225.txt" />
+    <None Include="Assets\Resources\Maps\226.txt" />
+    <None Include="Assets\Resources\Maps\227.txt" />
+    <None Include="Assets\Resources\Maps\228.txt" />
+    <None Include="Assets\Resources\Maps\229.txt" />
+    <None Include="Assets\Resources\Maps\23.txt" />
+    <None Include="Assets\Resources\Maps\230.txt" />
+    <None Include="Assets\Resources\Maps\231.txt" />
+    <None Include="Assets\Resources\Maps\232.txt" />
+    <None Include="Assets\Resources\Maps\233.txt" />
+    <None Include="Assets\Resources\Maps\234.txt" />
+    <None Include="Assets\Resources\Maps\235.txt" />
+    <None Include="Assets\Resources\Maps\236.txt" />
+    <None Include="Assets\Resources\Maps\237.txt" />
+    <None Include="Assets\Resources\Maps\238.txt" />
+    <None Include="Assets\Resources\Maps\239.txt" />
+    <None Include="Assets\Resources\Maps\24.txt" />
+    <None Include="Assets\Resources\Maps\240.txt" />
+    <None Include="Assets\Resources\Maps\241.txt" />
+    <None Include="Assets\Resources\Maps\242.txt" />
+    <None Include="Assets\Resources\Maps\243.txt" />
+    <None Include="Assets\Resources\Maps\244.txt" />
+    <None Include="Assets\Resources\Maps\245.txt" />
+    <None Include="Assets\Resources\Maps\246.txt" />
+    <None Include="Assets\Resources\Maps\247.txt" />
+    <None Include="Assets\Resources\Maps\248.txt" />
+    <None Include="Assets\Resources\Maps\249.txt" />
+    <None Include="Assets\Resources\Maps\25.txt" />
+    <None Include="Assets\Resources\Maps\250.txt" />
+    <None Include="Assets\Resources\Maps\251.txt" />
+    <None Include="Assets\Resources\Maps\252.txt" />
+    <None Include="Assets\Resources\Maps\253.txt" />
+    <None Include="Assets\Resources\Maps\254.txt" />
+    <None Include="Assets\Resources\Maps\255.txt" />
+    <None Include="Assets\Resources\Maps\256.txt" />
+    <None Include="Assets\Resources\Maps\257.txt" />
+    <None Include="Assets\Resources\Maps\258.txt" />
+    <None Include="Assets\Resources\Maps\259.txt" />
+    <None Include="Assets\Resources\Maps\26.txt" />
+    <None Include="Assets\Resources\Maps\260.txt" />
+    <None Include="Assets\Resources\Maps\261.txt" />
+    <None Include="Assets\Resources\Maps\262.txt" />
+    <None Include="Assets\Resources\Maps\263.txt" />
+    <None Include="Assets\Resources\Maps\264.txt" />
+    <None Include="Assets\Resources\Maps\265.txt" />
+    <None Include="Assets\Resources\Maps\266.txt" />
+    <None Include="Assets\Resources\Maps\267.txt" />
+    <None Include="Assets\Resources\Maps\268.txt" />
+    <None Include="Assets\Resources\Maps\269.txt" />
+    <None Include="Assets\Resources\Maps\27.txt" />
+    <None Include="Assets\Resources\Maps\270.txt" />
+    <None Include="Assets\Resources\Maps\271.txt" />
+    <None Include="Assets\Resources\Maps\272.txt" />
+    <None Include="Assets\Resources\Maps\273.txt" />
+    <None Include="Assets\Resources\Maps\274.txt" />
+    <None Include="Assets\Resources\Maps\275.txt" />
+    <None Include="Assets\Resources\Maps\276.txt" />
+    <None Include="Assets\Resources\Maps\277.txt" />
+    <None Include="Assets\Resources\Maps\278.txt" />
+    <None Include="Assets\Resources\Maps\279.txt" />
+    <None Include="Assets\Resources\Maps\28.txt" />
+    <None Include="Assets\Resources\Maps\280.txt" />
+    <None Include="Assets\Resources\Maps\281.txt" />
+    <None Include="Assets\Resources\Maps\282.txt" />
+    <None Include="Assets\Resources\Maps\283.txt" />
+    <None Include="Assets\Resources\Maps\284.txt" />
+    <None Include="Assets\Resources\Maps\285.txt" />
+    <None Include="Assets\Resources\Maps\286.txt" />
+    <None Include="Assets\Resources\Maps\287.txt" />
+    <None Include="Assets\Resources\Maps\288.txt" />
+    <None Include="Assets\Resources\Maps\289.txt" />
+    <None Include="Assets\Resources\Maps\29.txt" />
+    <None Include="Assets\Resources\Maps\290.txt" />
+    <None Include="Assets\Resources\Maps\291.txt" />
+    <None Include="Assets\Resources\Maps\292.txt" />
+    <None Include="Assets\Resources\Maps\293.txt" />
+    <None Include="Assets\Resources\Maps\294.txt" />
+    <None Include="Assets\Resources\Maps\295.txt" />
+    <None Include="Assets\Resources\Maps\296.txt" />
+    <None Include="Assets\Resources\Maps\297.txt" />
+    <None Include="Assets\Resources\Maps\3.txt" />
+    <None Include="Assets\Resources\Maps\30.txt" />
+    <None Include="Assets\Resources\Maps\31.txt" />
+    <None Include="Assets\Resources\Maps\32.txt" />
+    <None Include="Assets\Resources\Maps\33.txt" />
+    <None Include="Assets\Resources\Maps\34.txt" />
+    <None Include="Assets\Resources\Maps\35.txt" />
+    <None Include="Assets\Resources\Maps\36.txt" />
+    <None Include="Assets\Resources\Maps\37.txt" />
+    <None Include="Assets\Resources\Maps\38.txt" />
+    <None Include="Assets\Resources\Maps\39.txt" />
+    <None Include="Assets\Resources\Maps\4.txt" />
+    <None Include="Assets\Resources\Maps\40.txt" />
+    <None Include="Assets\Resources\Maps\41.txt" />
+    <None Include="Assets\Resources\Maps\42.txt" />
+    <None Include="Assets\Resources\Maps\43.txt" />
+    <None Include="Assets\Resources\Maps\44.txt" />
+    <None Include="Assets\Resources\Maps\45.txt" />
+    <None Include="Assets\Resources\Maps\46.txt" />
+    <None Include="Assets\Resources\Maps\47.txt" />
+    <None Include="Assets\Resources\Maps\48.txt" />
+    <None Include="Assets\Resources\Maps\49.txt" />
+    <None Include="Assets\Resources\Maps\5.txt" />
+    <None Include="Assets\Resources\Maps\50.txt" />
+    <None Include="Assets\Resources\Maps\51.txt" />
+    <None Include="Assets\Resources\Maps\52.txt" />
+    <None Include="Assets\Resources\Maps\53.txt" />
+    <None Include="Assets\Resources\Maps\54.txt" />
+    <None Include="Assets\Resources\Maps\55.txt" />
+    <None Include="Assets\Resources\Maps\56.txt" />
+    <None Include="Assets\Resources\Maps\57.txt" />
+    <None Include="Assets\Resources\Maps\58.txt" />
+    <None Include="Assets\Resources\Maps\59.txt" />
+    <None Include="Assets\Resources\Maps\6.txt" />
+    <None Include="Assets\Resources\Maps\60.txt" />
+    <None Include="Assets\Resources\Maps\61.txt" />
+    <None Include="Assets\Resources\Maps\62.txt" />
+    <None Include="Assets\Resources\Maps\63.txt" />
+    <None Include="Assets\Resources\Maps\64.txt" />
+    <None Include="Assets\Resources\Maps\65.txt" />
+    <None Include="Assets\Resources\Maps\66.txt" />
+    <None Include="Assets\Resources\Maps\67.txt" />
+    <None Include="Assets\Resources\Maps\68.txt" />
+    <None Include="Assets\Resources\Maps\69.txt" />
+    <None Include="Assets\Resources\Maps\7.txt" />
+    <None Include="Assets\Resources\Maps\70.txt" />
+    <None Include="Assets\Resources\Maps\71.txt" />
+    <None Include="Assets\Resources\Maps\72.txt" />
+    <None Include="Assets\Resources\Maps\73.txt" />
+    <None Include="Assets\Resources\Maps\74.txt" />
+    <None Include="Assets\Resources\Maps\75.txt" />
+    <None Include="Assets\Resources\Maps\76.txt" />
+    <None Include="Assets\Resources\Maps\77.txt" />
+    <None Include="Assets\Resources\Maps\78.txt" />
+    <None Include="Assets\Resources\Maps\79.txt" />
+    <None Include="Assets\Resources\Maps\8.txt" />
+    <None Include="Assets\Resources\Maps\80.txt" />
+    <None Include="Assets\Resources\Maps\81.txt" />
+    <None Include="Assets\Resources\Maps\82.txt" />
+    <None Include="Assets\Resources\Maps\83.txt" />
+    <None Include="Assets\Resources\Maps\84.txt" />
+    <None Include="Assets\Resources\Maps\85.txt" />
+    <None Include="Assets\Resources\Maps\86.txt" />
+    <None Include="Assets\Resources\Maps\87.txt" />
+    <None Include="Assets\Resources\Maps\88.txt" />
+    <None Include="Assets\Resources\Maps\89.txt" />
+    <None Include="Assets\Resources\Maps\9.txt" />
+    <None Include="Assets\Resources\Maps\90.txt" />
+    <None Include="Assets\Resources\Maps\91.txt" />
+    <None Include="Assets\Resources\Maps\92.txt" />
+    <None Include="Assets\Resources\Maps\93.txt" />
+    <None Include="Assets\Resources\Maps\94.txt" />
+    <None Include="Assets\Resources\Maps\95.txt" />
+    <None Include="Assets\Resources\Maps\96.txt" />
+    <None Include="Assets\Resources\Maps\97.txt" />
+    <None Include="Assets\Resources\Maps\98.txt" />
+    <None Include="Assets\Resources\Maps\99.txt" />
+    <None Include="Assets\Resources\Maps\classic.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+</Project>
